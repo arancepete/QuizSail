@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="WGU C857 C191 Test Prep/Quiz Engine">
+    <meta name="keywords" content="quiz,test prep,questions,quizsail,wgu,c857,c952,c191,c993">
+
+    <title>QuizSail</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+      * {
+        font-family: 'Roboto',
+        sans-serif;
+        font-size: large;
+      }
+       html {
+        height: 100%;
+      }
+      body {
+        min-height: 100%;
+        padding: 5vh 5vw;
+      }
+      form {
+        margin: 0 auto;
+        max-width: 80vw;
+        padding: 5vh 5vw;
+        text-align: center;
+      }
+      input[type="button"] {
+        background-color: lightgreen;
+        cursor: pointer;
+        display: inherit;
+        margin: 0 auto;
+        padding: 2vh 10vw;
+        margin-top: 5vh;
+      }
+      input[type="button"]:hover {
+        background-color: green;
+        filter: brightness(150%);
+      }
+      .block {
+        background-color: rgba(238, 238, 238, 0.2);
+        border: 1px dotted #eee;
+      }
+      #resumeTitle {
+        width: 100vw;
+        text-align: center;
+      }
+      #savedSessions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .savedSession {
+        padding: 2vh 2vw;
+        margin: 1vh 1vw;
+        width: 100vw;
+        max-width: 400px;
+        transition: opacity 1s ease;
+      }
+      .savedSession[hidden] {
+        display: block;
+        opacity: 0;
+      }
+    </style>
+    <script src="common.js"></script>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <h1>Thanks for visiting QuizSail.</h1>
+      <p>
+        Feel free to contribute or submit issues: 
+        <a href="https://github.com/jmatzen/quizsail" target="_blank">github</a>
+      </p>
+    </div>
+    <div>
+      <form class="block">
+        <select id="quiz" size=2>
+          <option value="c857">C857 - 248 Questions</option>
+          <option value="c191">C191 - 717 Questions</option>
+        </select>
+        <p>
+          <input type="checkbox" id="fastmode"/> Fast Mode (don't ask question again if correct answer first time)
+        </p>
+        <p>
+          <input type="button" value="Start" id="startButton" />
+        </p>
+      </form>
+    </div>
+    <section id="savedSessions"></section>
+  </body>
+</html>
